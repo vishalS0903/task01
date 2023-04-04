@@ -79,6 +79,7 @@ Route::get('/brand/delete/{id}',[BrandController::class,'delete'])->name('brand.
 
 Route::get('/orders',[OrderController::class,'index'])->name('order.table');
 
+Route::get('/test',[OrderController::class,'index'])->name('order.table');
 
 Route::get('/reviews', function () {
     return view('Review.index');
