@@ -217,7 +217,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="{{url('/')}}" class="nav-link ">
+            <a href="{{url('/dashboard')}}" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -478,7 +478,16 @@
                 Review
               </p>
             </a>
-          </li> <li class="nav-item">
+          </li>
+          <li class="nav-item">
+            <a href="{{url('/contacts')}}" class="nav-link">
+              <i class="nav-icon fas fa-phone"></i>
+              <p>
+                Contact
+              </p>
+            </a>
+          </li>
+           <li class="nav-item">
             <a href="/orders" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>

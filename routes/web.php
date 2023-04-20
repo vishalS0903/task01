@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -77,6 +78,7 @@ Route::get('/brand/edit/{id}',[BrandController::class,'edit'])->name('brand.edit
 Route::Post('/brand/update/{id}',[BrandController::class,'update'])->name('brand.update');
 Route::get('/brand/delete/{id}',[BrandController::class,'delete'])->name('brand.delete');
 
+
 Route::get('/orders',[OrderController::class,'index'])->name('order.table');
 
 Route::get('/test',[OrderController::class,'index'])->name('order.table');
@@ -86,4 +88,23 @@ Route::get('/reviews', function () {
 });
 });
 
+
+//route for fronted
+Route::view('/','Front.index');
+// Route::view('/index','Front.index');
+Route::view('/about','Front.about');
+Route::view('/contact','Front.contact');
+Route::post('/contact/store',[ContactController::class,'store'])->name('contact.store');
+Route::get('/contacts',[ContactController::class,'index'])->name('contact.table');
+
+Route::view('/shop','Front.shop');
+Route::view('/shop-single','Front.shop-single');
+Route::view('/cart','Front.cart');
+Route::view('/checkout','Front.checkout');
+Route::view('/thankyou','Front.thankyou');
+
+
 require __DIR__.'/auth.php';
+
+
+

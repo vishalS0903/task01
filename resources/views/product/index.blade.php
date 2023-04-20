@@ -39,6 +39,12 @@ Product Table
                 <th>Description</th>
                 <th>Image</th>
                 <th>Category</th>
+                <th>Brand</th>
+                <th>Color</th>
+                <th>Size</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>User</th>
                 <th>Action</th>
             </tr>
 
@@ -59,6 +65,13 @@ Product Table
               </td>
               {{-- @dd($p->category) --}}
               <td>{{$p->category->name}}</td>
+              <td>{{$p->brand->name}}</td>
+              <td>{{$p->color->name}}</td>
+              <td>{{$p->size}}</td>
+              <td>{{$p->price}}</td>
+              <td>{{$p->quantity}}</td>
+              <td>{{$p->user->name}}</td>
+
 
 
               <td><a href="{{route('product.edit',$p->id)}}"><button type="button" class="btn btn-primary">Edit</button></a>
